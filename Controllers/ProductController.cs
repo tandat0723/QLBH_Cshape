@@ -81,6 +81,13 @@ namespace QLBH.Controllers
         }
 
 
+
+        public ActionResult Delete(int id)
+        {
+            var sp = da.Products.First(m => m.ProductID == id);
+            return View(sp);
+        }
+
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
@@ -88,12 +95,6 @@ namespace QLBH.Controllers
             da.Products.DeleteOnSubmit(sp);
             da.SubmitChanges();
             return RedirectToAction("ProductList");
-        }
-
-        public ActionResult Delete(int id)
-        {
-            var sp = da.Products.First(m => m.ProductID == id);
-            return View(sp);
         }
 
     }

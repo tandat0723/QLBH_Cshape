@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Northwind" Class="NWDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=TUFGAMING\MSSQLSERVER01;Initial Catalog=Northwind;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NorthwindConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Territories" Member="Territories">
-    <Type Name="Territory">
-      <Column Name="TerritoryID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TerritoryDescription" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Territory_EmployeeTerritory" Member="EmployeeTerritories" ThisKey="TerritoryID" OtherKey="TerritoryID" Type="EmployeeTerritory" />
-      <Association Name="Region_Territory" Member="Region" ThisKey="RegionID" OtherKey="RegionID" Type="Region" IsForeignKey="true" />
-    </Type>
-  </Table>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=TUFGAMING\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NorthwindConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Categories" Member="Categories">
     <Type Name="Category">
       <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -16,6 +7,15 @@
       <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Picture" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="Category_Product" Member="Products" ThisKey="CategoryID" OtherKey="CategoryID" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Territories" Member="Territories">
+    <Type Name="Territory">
+      <Column Name="TerritoryID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TerritoryDescription" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Territory_EmployeeTerritory" Member="EmployeeTerritories" ThisKey="TerritoryID" OtherKey="TerritoryID" Type="EmployeeTerritory" />
+      <Association Name="Region_Territory" Member="Region" ThisKey="RegionID" OtherKey="RegionID" Type="Region" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CustomerCustomerDemo" Member="CustomerCustomerDemos">
