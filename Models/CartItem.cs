@@ -15,12 +15,12 @@ namespace QLBH.Models
         public decimal? UnitPrice { get; set; }
         public int Quantity { get; set; }
         public decimal? Total { get { return UnitPrice * Quantity; } }
-        public CartItem(int ProductID)
+        public CartItem(int productID)
         {
-            this.ProductID = ProductID;
-            var product = da.Products.Single(n => n.ProductID == ProductID);
-            ProductName = product.ProductName;
-            UnitPrice = product.UnitPrice;
+            this.ProductID = productID;
+            Product p = da.Products.Single(n => n.ProductID == productID);
+            ProductName = p.ProductName;
+            UnitPrice = p.UnitPrice;
             Quantity = 1;
         }
     }

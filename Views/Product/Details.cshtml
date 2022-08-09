@@ -86,6 +86,6 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
-    @Html.ActionLink("Add To Cart", "AddToCart", "Cart", new { productID = Model.ProductID }, null) |
-    @Html.ActionLink("Back to List", "ProductList")
+    @Html.ActionLink("Back to List", "ProductList") |
+    <a href="@Url.Action("AddToCart", "Cart", new { id = Model.ProductID })">Add to cart</a>
 </p>
