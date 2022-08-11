@@ -72,7 +72,7 @@ namespace QLBH.Models
     #endregion
 		
 		public NWDataClassesDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["NorthwindConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["NorthwindConnectionString2"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
